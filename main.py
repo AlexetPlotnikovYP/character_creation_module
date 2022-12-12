@@ -1,11 +1,11 @@
 from random import randint
 
-war = 'warrior'
-mag = 'mage'
-hea = 'healer'
+war: str = 'warrior'
+mag: str = 'mage'
+hea: str = 'healer'
 
 
-def attack(char_name, char_class):
+def attack(char_name: str, char_class: str) -> str:
     if char_class == war:
         return (f'{char_name} нанёс противнику урон, равный '
                 f'{5 + randint(3, 5)}')
@@ -15,10 +15,9 @@ def attack(char_name, char_class):
     if char_class == hea:
         return (f'{char_name} нанёс противнику урон, равный '
                 f'{5 + randint(-3, -1)}')
-    return None
 
 
-def defence(char_name, char_class):
+def defence(char_name: str, char_class: str) -> str:
     if char_class == war:
         return (f'{char_name} блокировал {10 + randint(5, 10)} урона')
     if char_class == mag:
@@ -28,7 +27,7 @@ def defence(char_name, char_class):
     return None
 
 
-def special(char_name, char_class):
+def special(char_name: str, char_class: str) -> str:
     if char_class == war:
         return (f'{char_name} применил специальное умение '
                 f'«Выносливость {80 + 25}»')
@@ -36,10 +35,8 @@ def special(char_name, char_class):
         return (f'{char_name} применил специальное умение «Атака {5 + 40}»')
     if char_class == hea:
         return (f'{char_name} применил специальное умение «Защита {10 + 30}»')
-    return None
 
-
-def start_training(char_name, char_class):
+def start_training(char_name: str, char_class: str) -> str:
     if char_class == war:
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == mag:
@@ -63,7 +60,7 @@ def start_training(char_name, char_class):
     return 'Тренировка окончена.'
 
 
-def choice_char_class():
+def choice_char_class() -> str:
     approve_choice = None
     char_class = None
     while approve_choice != 'y':
